@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>ADNursingServer</display-name>
+  <filter>
+    <filter-name>SetAllCharacterEncodingFilter</filter-name>
+    <filter-class>com.ad.filter.SetAllCharacterEncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>SetAllCharacterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddPostServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.AddPostServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ViewOwnerPostServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.ViewOwnerPostServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ViewUserServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.ViewUserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ViewOnePostServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.ViewOnePostServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddFavoritesServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.AddFavoritesServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ViewFavoritesPostServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.ViewFavoritesPostServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddCommentServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.AddCommentServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ViewPostByKindServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.ViewPostByKindServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ViewOwnerCommentServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.ViewOwnerCommentServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ViewPostCommentServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.ViewPostCommentServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ViewOwnerFavoritesServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.ViewOwnerFavoritesServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DelPostServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.DelPostServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DelCommentServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.DelCommentServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DelFavoriteServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.DelFavoriteServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddTestServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.AddTestServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ViewOwnerTestServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.ViewOwnerTestServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DownloadFileServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.DownloadFileServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>IsFavoriteServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.IsFavoriteServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateUserServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.UpdateUserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateTestInforServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.UpdateTestInforServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ViewPostsByKindAndCommentNum</servlet-name>
+    <servlet-class>com.ad.web.controller.ViewPostsByKindAndCommentNum</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ViewKindNumServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.ViewKindNumServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddPostImgUrlServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.AddPostImgUrlServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddCommentInforServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.AddCommentInforServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddCommentImgUrlServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.AddCommentImgUrlServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>updateUserInforServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.updateUserInforServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>updateUserImgUrlServlet</servlet-name>
+    <servlet-class>com.ad.web.controller.updateUserImgUrlServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/servlet/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/servlet/RegisterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddPostServlet</servlet-name>
+    <url-pattern>/servlet/AddPostServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewOwnerPostServlet</servlet-name>
+    <url-pattern>/servlet/ViewOwnerPostServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewUserServlet</servlet-name>
+    <url-pattern>/servlet/ViewUserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewOnePostServlet</servlet-name>
+    <url-pattern>/servlet/ViewOnePostServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddFavoritesServlet</servlet-name>
+    <url-pattern>/servlet/AddFavoritesServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewFavoritesPostServlet</servlet-name>
+    <url-pattern>/servlet/ViewFavoritesPostServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddCommentServlet</servlet-name>
+    <url-pattern>/servlet/AddCommentServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewPostByKindServlet</servlet-name>
+    <url-pattern>/servlet/ViewPostByKindServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewOwnerCommentServlet</servlet-name>
+    <url-pattern>/servlet/ViewOwnerCommentServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewPostCommentServlet</servlet-name>
+    <url-pattern>/servlet/ViewPostCommentServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewOwnerFavoritesServlet</servlet-name>
+    <url-pattern>/servlet/ViewOwnerFavoritesServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelPostServlet</servlet-name>
+    <url-pattern>/servlet/DelPostServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelCommentServlet</servlet-name>
+    <url-pattern>/servlet/DelCommentServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelFavoriteServlet</servlet-name>
+    <url-pattern>/servlet/DelFavoriteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddTestServlet</servlet-name>
+    <url-pattern>/servlet/AddTestServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewOwnerTestServlet</servlet-name>
+    <url-pattern>/servlet/ViewOwnerTestServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DownloadFileServlet</servlet-name>
+    <url-pattern>/servlet/DownloadFileServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>IsFavoriteServlet</servlet-name>
+    <url-pattern>/servlet/IsFavoriteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateUserServlet</servlet-name>
+    <url-pattern>/servlet/UpdateUserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateTestInforServlet</servlet-name>
+    <url-pattern>/servlet/UpdateTestInforServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewPostsByKindAndCommentNum</servlet-name>
+    <url-pattern>/servlet/ViewPostsByKindAndCommentNum</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewKindNumServlet</servlet-name>
+    <url-pattern>/servlet/ViewKindNumServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddPostImgUrlServlet</servlet-name>
+    <url-pattern>/servlet/AddPostImgUrlServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddCommentInforServlet</servlet-name>
+    <url-pattern>/servlet/AddCommentInforServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddCommentImgUrlServlet</servlet-name>
+    <url-pattern>/servlet/AddCommentImgUrlServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>updateUserInforServlet</servlet-name>
+    <url-pattern>/servlet/updateUserInforServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>updateUserImgUrlServlet</servlet-name>
+    <url-pattern>/servlet/updateUserImgUrlServlet</url-pattern>
+  </servlet-mapping>
+
+
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

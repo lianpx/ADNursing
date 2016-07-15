@@ -1,0 +1,6 @@
+[2016-07-01 11:41:36] [info]  [ 6352] Commons Daemon procrun (1.0.15.0 64-bit) started
+[2016-07-01 11:41:36] [info]  [ 6352] Debugging 'tomcat8' service...
+[2016-07-01 11:41:37] [info]  [ 6352] Starting service...
+[2016-07-01 11:41:38] [info]  [ 6352] Service started in 1200 ms.
+[2016-07-01 11:41:40] [info]  [ 6352] Debug service finished with exit code 0
+[2016-07-01 11:41:40] [info]  [ 6352] Commons Daemon procrun finished
