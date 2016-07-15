@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "softwaredesign.adnursing"
+        minSdkVersion 19
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:24.0.0'
+    compile project(':library:WheelPicker')
+    compile project(':library:FilePicker')
+    compile files('D:/android/workspace/ADNursing/libs/fastjson-1.1.37.jar')
+    compile files('D:/android/workspace/ADNursing/libs/fluent-hc-4.2.5.jar')
+    compile files('D:/android/workspace/ADNursing/libs/android-async-http-1.4.8.jar')
+    compile files('D:/android/workspace/ADNursing/libs/httpclient-4.2.5.jar')
+    compile files('D:/android/workspace/ADNursing/libs/httpcore-4.2.4.jar')
+    compile files('D:/android/workspace/ADNursing/libs/commons-codec-1.6.jar')
+    compile files('D:/android/workspace/ADNursing/libs/commons-logging-1.1.1.jar')
+    compile files('D:/android/workspace/ADNursing/libs/httpclient-cache-4.2.5.jar')
+    compile files('D:/android/workspace/ADNursing/libs/httpmime-4.2.5.jar')
+    compile files('D:/android/workspace/ADNursing/libs/picasso-2.2.0.jar')
+}

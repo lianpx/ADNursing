@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="White">#FFFFFF</color>
+    <color name="Black">#000000</color>
+    <color name="DarkGray">#aaaaaa</color>
+    <color name="BgGray">#f0f0f0</color>
+    <color name="DivdGray">#d4d4d4</color>
+    <color name="CubeGray">#DEDEDE</color>
+    <color name="SDarkGray">#2a2a2a</color>
+    <color name="CheckedBlue">#7BBDFF</color>
+</resources>

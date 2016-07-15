@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="array_artcle_type">
+        <item>病症疑问</item>
+        <item>名医推荐</item>
+        <item>药物推荐</item>
+        <item>交流分享</item>
+    </string-array>
+
+    <string-array name="user_gender">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+</resources>
