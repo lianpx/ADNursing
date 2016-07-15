@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="70dp"
+            android:id="@+id/priview_img"
+            android:src="@mipmap/lena"
+            android:layout_alignParentLeft="true"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/priview_title"
+                android:textSize="18dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:maxLines="1"
+                android:textColor="@color/SDarkGray"
+                android:maxLength="12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/priview_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@id/priview_title"
+                android:layout_marginTop="5dp"
+                android:textSize="14dp"
+                android:maxLines="2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/priview_time"
+                android:layout_alignParentRight="true"
+                android:layout_alignBottom="@id/priview_title"
+                android:textSize="12dp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

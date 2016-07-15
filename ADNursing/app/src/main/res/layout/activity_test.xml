@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="softwaredesign.adnursing.TestActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/top_bar"
+        android:background="@color/White"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/top_bar_info_txt"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:text="测试" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:id="@+id/top_bar_divd"
+        android:background="@color/DivdGray"
+        android:layout_below="@id/top_bar"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/botton_bar"
+        android:layout_alignParentBottom="true"
+        android:background="@color/White">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/botton_bar_icon"
+            android:layout_marginTop="5dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:id="@+id/bottom_bar_home_icon"
+                android:layout_weight="1"
+                android:src="@drawable/bottom_bar_home"
+                android:scaleType="fitCenter"
+                android:paddingTop="1dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:id="@+id/bottom_bar_communicate_icon"
+                android:layout_weight="1"
+                android:src="@drawable/bottom_bar_communicate"
+                android:scaleType="fitCenter"
+                android:paddingTop="1dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:id="@+id/bottom_bar_test_icon"
+                android:layout_weight="1"
+                android:src="@drawable/bottom_bar_test"
+                android:scaleType="fitCenter"
+                android:paddingTop="1dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:id="@+id/bottom_bar_my_icon"
+                android:layout_weight="1"
+                android:src="@drawable/bottom_bar_my"
+                android:scaleType="fitCenter"
+                android:paddingTop="1dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/botton_bar_txt"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="首页"
+                android:id="@+id/bottom_bar_home_txt"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:paddingTop="2dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="交流"
+                android:id="@+id/bottom_bar_communicate_txt"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:paddingTop="2dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="测试"
+                android:id="@+id/bottom_bar_test_txt"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:paddingTop="2dp"
+                android:textColor="@color/SDarkGray" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的"
+                android:id="@+id/bottom_bar_my_txt"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:paddingTop="2dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:id="@+id/bottom_bar_divd"
+        android:background="@color/DivdGray"
+        android:layout_above="@id/botton_bar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView6"
+        android:layout_below="@id/top_bar_divd"
+        android:layout_above="@id/bottom_bar_divd">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/test_background"
+            android:gravity="center_horizontal"
+            android:onClick="OnClickHideKeyboard" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="海默测试采用日本学者吉泽勋建立的痴呆预知测试法，能让病人或病人家属进行阶段性病情测试和记录。"
+                android:id="@+id/textView3"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:id="@+id/test_init_info_form"
+                android:layout_marginTop="80dp"
+                android:paddingBottom="20dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:id="@+id/test_init_info_name"
+                    android:layout_gravity="center_horizontal"
+                    android:hint="姓名"
+                    android:background="@drawable/login_text"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textSize="16dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/login_text"
+                    android:layout_marginTop="20dp">
+
+                    <Spinner
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/test_init_info_gender_spinner"
+                        android:entries="@array/array_artcle_type"
+                        android:textAlignment="center"
+                        android:layout_marginLeft="100dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"/>
+
+                </RelativeLayout>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:id="@+id/test_init_info_birth"
+                    android:layout_gravity="center_horizontal"
+                    android:hint="出生年月"
+                    android:background="@drawable/login_text"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:layout_marginTop="20dp"
+                    android:textSize="16dp"
+                    android:editable="false" />
+
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="280dp"
+                android:layout_height="40dp"
+                android:text="建立被测试者"
+                android:id="@+id/test_info_submit_button"
+                android:layout_marginTop="20dp"
+                android:textSize="18dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:background="@drawable/login_button"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="softwaredesign.adnursing.ForumActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/top_bar"
+        android:background="@color/White"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/top_bar_back_icon"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/btn_back_arrow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/top_bar_info_txt"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="收藏"
+            android:id="@+id/textView6"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:textSize="20dp" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:id="@+id/top_bar_divd"
+        android:background="@color/DivdGray"
+        android:layout_below="@id/top_bar"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/forum_input_bar"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/review_text_upload_text"
+            android:layout_weight="1"
+            android:imeActionLabel="sure"
+            android:imeOptions="actionDone"
+            android:inputType="text" />
+
+        <Button
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:text="+"
+            android:id="@+id/review_image_upload_button"
+            android:textAlignment="center"
+            android:background="@drawable/upload_button"
+            android:textSize="18dp"
+            android:textColor="@color/DarkGray"
+            android:layout_marginLeft="10dp" />
+
+        <!--<ImageView-->
+            <!--android:layout_width="25dp"-->
+            <!--android:layout_height="25dp"-->
+            <!--android:id="@+id/imageView10"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:src="@mipmap/input_emoticon"-->
+            <!--android:layout_gravity="bottom"-->
+            <!--android:layout_marginBottom="5dp" />-->
+
+        <!--<ImageView-->
+            <!--android:layout_width="30dp"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:id="@+id/review_image_upload_button"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:src="@mipmap/input_plus"-->
+            <!--android:layout_gravity="bottom"-->
+            <!--android:layout_marginBottom="2dp" />-->
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:id="@+id/input_bar_divd"
+        android:background="@color/DivdGray"
+        android:layout_above="@id/forum_input_bar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/forum_scroll_view"
+        android:layout_below="@id/top_bar_divd"
+        android:layout_above="@id/input_bar_divd">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/formu_background"
+            android:background="@color/BgGray">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:background="@color/White">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/main_top_info_1">
+
+                        <softwaredesign.adnursing.RoundImageView
+                            xmlns:maple="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:id="@+id/main_sculpture"
+                            android:scaleType="centerInside"
+                            android:src="@mipmap/sculpture_unknown_default"
+                            maple:maskType="CIRCLE"
+                            maple:borderWidth_Ri="2dp"
+                            maple:borderColor_Ri="@color/DivdGray"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/main_name"
+                            android:layout_marginLeft="5dp"
+                            android:textSize="16dp"
+                            android:layout_toEndOf="@id/main_sculpture"
+                            android:layout_centerVertical="true" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:textSize="12dp"
+                            android:id="@+id/main_time" />
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/main_title"
+                        android:textSize="18dp"
+                        android:textColor="@color/SDarkGray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/main_content"
+                        android:textSize="16dp"
+                        android:layout_marginTop="8dp"
+                        android:lineSpacingExtra="3dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/main_image_set"
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:layout_width="110dp"
+                        android:layout_height="90dp"
+                        android:id="@+id/main_image_1"
+                        android:scaleType="centerCrop"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:layout_marginRight="10dp" />
+
+                    <ImageView
+                        android:layout_width="110dp"
+                        android:layout_height="90dp"
+                        android:id="@+id/main_image_2"
+                        android:scaleType="centerCrop"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:layout_marginRight="10dp" />
+
+                    <ImageView
+                        android:layout_width="110dp"
+                        android:layout_height="90dp"
+                        android:id="@+id/main_image_3"
+                        android:scaleType="centerCrop"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:layout_marginRight="10dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/imageView9"
+                        android:src="@mipmap/type_target" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/main_type"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:gravity="bottom">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="@mipmap/icon_person_num"
+                        android:scaleType="centerInside"
+                        android:layout_marginLeft="2dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/main_visitor_num"
+                        android:layout_marginLeft="9dp"
+                        android:textSize="12dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <softwaredesign.adnursing.MyListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/post_list"
+                android:layout_marginTop="15dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:background="@color/White"
+                android:paddingBottom="20dp">
+
+                <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_marginTop="15dp">-->
+
+                    <!--<softwaredesign.adnursing.RoundImageView-->
+                        <!--xmlns:maple="http://schemas.android.com/apk/res-auto"-->
+                        <!--android:layout_width="50dp"-->
+                        <!--android:layout_height="50dp"-->
+                        <!--android:id="@+id/review_scul_1"-->
+                        <!--android:scaleType="centerInside"-->
+                        <!--android:src="@mipmap/sculpture_1"-->
+                        <!--maple:maskType="CIRCLE"-->
+                        <!--maple:borderWidth_Ri="2dp"-->
+                        <!--maple:borderColor_Ri="@color/DivdGray"/>-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="王俊凯"-->
+                        <!--android:id="@+id/review_name_1"-->
+                        <!--android:layout_toEndOf="@id/review_scul_1"-->
+                        <!--android:layout_marginLeft="5dp"-->
+                        <!--android:textSize="16dp" />-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="说的真好！"-->
+                        <!--android:id="@+id/review_content_1"-->
+                        <!--android:layout_toEndOf="@id/review_scul_1"-->
+                        <!--android:layout_below="@id/review_name_1"-->
+                        <!--android:layout_marginLeft="5dp"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:textSize="14dp" />-->
+
+                    <!--<LinearLayout-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_toEndOf="@id/review_scul_1"-->
+                        <!--android:layout_below="@id/review_content_1"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:layout_marginLeft="5dp">-->
+
+                        <!--<ImageView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:src="@mipmap/ref_image_1"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:maxHeight="60dp"-->
+                            <!--android:adjustViewBounds="true"-->
+                            <!--android:scaleType="fitStart"-->
+                            <!--android:layout_marginRight="10dp" />-->
+
+                        <!--<ImageView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:src="@mipmap/ref_image_2"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:maxHeight="60dp"-->
+                            <!--android:adjustViewBounds="true"-->
+                            <!--android:scaleType="fitStart"-->
+                            <!--android:layout_marginRight="10dp" />-->
+
+                        <!--<ImageView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:src="@mipmap/ref_image_3"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:maxHeight="60dp"-->
+                            <!--android:adjustViewBounds="true"-->
+                            <!--android:scaleType="fitStart"-->
+                            <!--android:layout_marginRight="10dp" />-->
+                    <!--</LinearLayout>-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="12分钟前"-->
+                        <!--android:id="@+id/review_time_1"-->
+                        <!--android:layout_alignParentRight="true"-->
+                        <!--android:layout_alignParentTop="true"-->
+                        <!--android:textSize="12dp" />-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="1楼"-->
+                        <!--android:layout_toLeftOf="@id/review_time_1"-->
+                        <!--android:textSize="12dp"-->
+                        <!--android:layout_marginRight="5dp" />-->
+
+                <!--</RelativeLayout>-->
+
+                <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_marginTop="15dp">-->
+
+                    <!--<softwaredesign.adnursing.RoundImageView-->
+                        <!--xmlns:maple="http://schemas.android.com/apk/res-auto"-->
+                        <!--android:layout_width="50dp"-->
+                        <!--android:layout_height="50dp"-->
+                        <!--android:id="@+id/review_scul_2"-->
+                        <!--android:scaleType="centerInside"-->
+                        <!--android:src="@mipmap/sculpture_4"-->
+                        <!--maple:maskType="CIRCLE"-->
+                        <!--maple:borderWidth_Ri="2dp"-->
+                        <!--maple:borderColor_Ri="@color/DivdGray"/>-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="易烊千玺"-->
+                        <!--android:id="@+id/review_name_2"-->
+                        <!--android:layout_toEndOf="@id/review_scul_2"-->
+                        <!--android:layout_marginLeft="5dp"-->
+                        <!--android:textSize="16dp" />-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="说的真好！说的真好！说的真好！说的真好！说的真好！说的真好！说的真好！说的真好！说的真好！"-->
+                        <!--android:id="@+id/review_content_2"-->
+                        <!--android:layout_toEndOf="@id/review_scul_2"-->
+                        <!--android:layout_below="@id/review_name_2"-->
+                        <!--android:layout_marginLeft="5dp"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:textSize="14dp" />-->
+
+                    <!--<LinearLayout-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_toEndOf="@id/review_scul_2"-->
+                        <!--android:layout_below="@id/review_content_2"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:layout_marginLeft="5dp">-->
+
+                        <!--<ImageView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:src="@mipmap/ref_image_1"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:maxHeight="60dp"-->
+                            <!--android:adjustViewBounds="true"-->
+                            <!--android:scaleType="fitStart"-->
+                            <!--android:layout_marginRight="10dp" />-->
+
+                        <!--<ImageView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:maxHeight="60dp"-->
+                            <!--android:adjustViewBounds="true"-->
+                            <!--android:scaleType="fitStart"-->
+                            <!--android:layout_marginRight="10dp" />-->
+
+                        <!--<ImageView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:maxHeight="60dp"-->
+                            <!--android:adjustViewBounds="true"-->
+                            <!--android:scaleType="fitStart"-->
+                            <!--android:layout_marginRight="10dp" />-->
+                    <!--</LinearLayout>-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="8分钟前"-->
+                        <!--android:id="@+id/review_time_2"-->
+                        <!--android:layout_alignParentRight="true"-->
+                        <!--android:layout_alignParentTop="true"-->
+                        <!--android:textSize="12dp" />-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="2楼"-->
+                        <!--android:layout_toLeftOf="@id/review_time_2"-->
+                        <!--android:textSize="12dp"-->
+                        <!--android:layout_marginRight="5dp" />-->
+
+                <!--</RelativeLayout>-->
+
+            </softwaredesign.adnursing.MyListView>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
