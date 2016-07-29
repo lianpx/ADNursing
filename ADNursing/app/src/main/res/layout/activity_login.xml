@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/login_page"
-    tools:context="softwaredesign.adnursing.LoginActivity"
+    tools:context=".Activity.LoginActivity"
     android:background="#f0f0f0">
 
     <RelativeLayout
@@ -105,10 +105,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="还没帐号？点此注册"
-                    android:id="@+id/textView"
+                    android:id="@+id/register_text"
                     android:textAlignment="center"
-                    android:layout_marginTop="20dp"
-                    android:onClick="OnClickToRegister" />
+                    android:layout_marginTop="20dp"/>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

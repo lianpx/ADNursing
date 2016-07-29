@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="softwaredesign.adnursing.PostSetActivity">
+    tools:context=".Activity.PostSetActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -27,8 +27,7 @@
             android:layout_centerInParent="true"
             android:layout_centerVertical="true"
             android:gravity="center"
-            android:textSize="20dp"
-            android:text="收藏" />
+            android:textSize="20dp" />
 
     </RelativeLayout>
 
@@ -39,12 +38,19 @@
         android:background="@color/DivdGray"
         android:layout_below="@id/top_bar"/>
 
-    <ScrollView
+    <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/scrollView3"-->
+        <!--android:layout_below="@id/top_bar_divd"-->
+        <!--android:layout_marginTop="10dp">-->
+
+    <softwaredesign.adnursing.Custom.RefreshLayout
+        android:id="@+id/refresh_ly"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/scrollView3"
+        android:layout_height="match_parent"
         android:layout_below="@id/top_bar_divd"
-        android:layout_marginTop="10dp">
+        android:scrollbars="none">
 
         <LinearLayout
             android:orientation="vertical"
@@ -53,15 +59,17 @@
             android:paddingLeft="20dp"
             android:paddingRight="20dp">
 
-            <softwaredesign.adnursing.MyListView
+            <softwaredesign.adnursing.Custom.MyListView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/post_list"
                 android:divider="@null">
-            </softwaredesign.adnursing.MyListView>
+            </softwaredesign.adnursing.Custom.MyListView>
 
         </LinearLayout>
 
-    </ScrollView>
+    </softwaredesign.adnursing.Custom.RefreshLayout>
+
+    <!--</ScrollView>-->
 
 </RelativeLayout>

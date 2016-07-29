@@ -2,9 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="softwaredesign.adnursing">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
 
     <application
         android:name=".HttpApplication"
@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name=".LoginActivity"
+            android:name=".Activity.LoginActivity"
             android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,37 +23,42 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RegisterActivity"
+            android:name=".Activity.RegisterActivity"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".Activity.HomeActivity"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name=".CommunicateActivity"
+            android:name=".Activity.CommunicateActivity"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name=".MyActivity"
+            android:name=".Activity.MyActivity"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name=".ForumActivity"
+            android:name=".Activity.ForumActivity"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name=".PostActivity"
+            android:name=".Activity.PostActivity"
             android:windowSoftInputMode="stateAlwaysHidden" />
-        <activity android:name=".TTTestActivity" />
-        <activity android:name=".PostSetActivity" />
+        <activity android:name=".Activity.TTTestActivity" />
+        <activity android:name=".Activity.PostSetActivity" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".Activity.ProfileActivity"
             android:windowSoftInputMode="stateAlwaysHidden" />
-        <activity android:name=".SettingActivity" />
+        <activity android:name=".Activity.SettingActivity" />
         <activity
-            android:name=".TestActivity"
+            android:name=".Activity.TestActivity"
             android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".Activity.TestResultActivity" />
+        <activity android:name=".Activity.NewTestActivity" />
+        <activity android:name=".Activity.MyPostSetActivity" />
+        <activity android:name=".Activity.MyReviewSetActivity">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
 
-        <activity android:name=".TestResultActivity" />
-
-        <activity android:name=".NewTestActivity"/>
-
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
     </application>
 
 </manifest>

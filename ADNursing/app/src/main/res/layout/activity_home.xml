@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/home_page"
-    tools:context="softwaredesign.adnursing.HomeActivity">
+    tools:context=".Activity.HomeActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -237,13 +237,13 @@
 
                 </LinearLayout>
 
-                <softwaredesign.adnursing.MyListView
+                <softwaredesign.adnursing.Custom.MyListView
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/notice_post_list"
                     android:divider="@null">
-                </softwaredesign.adnursing.MyListView>
+                </softwaredesign.adnursing.Custom.MyListView>
 
             </LinearLayout>
 
@@ -314,12 +314,12 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <softwaredesign.adnursing.MyListView
+                <softwaredesign.adnursing.Custom.MyListView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/news_post_list"
                     android:divider="@null">
-                </softwaredesign.adnursing.MyListView>
+                </softwaredesign.adnursing.Custom.MyListView>
 
             </LinearLayout>
 
@@ -372,7 +372,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal">
 
-                    <softwaredesign.adnursing.RoundImageView
+                    <softwaredesign.adnursing.Custom.RoundImageView
                         xmlns:maple="http://schemas.android.com/apk/res-auto"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
@@ -399,7 +399,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal">
 
-                    <softwaredesign.adnursing.RoundImageView
+                    <softwaredesign.adnursing.Custom.RoundImageView
                         xmlns:maple="http://schemas.android.com/apk/res-auto"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
@@ -426,7 +426,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal">
 
-                    <softwaredesign.adnursing.RoundImageView
+                    <softwaredesign.adnursing.Custom.RoundImageView
                         xmlns:maple="http://schemas.android.com/apk/res-auto"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
@@ -453,7 +453,7 @@
                     android:layout_weight="1"
                     android:gravity="center_horizontal">
 
-                    <softwaredesign.adnursing.RoundImageView
+                    <softwaredesign.adnursing.Custom.RoundImageView
                         xmlns:maple="http://schemas.android.com/apk/res-auto"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
@@ -547,12 +547,12 @@
 
                 </LinearLayout>
 
-                <softwaredesign.adnursing.MyListView
+                <softwaredesign.adnursing.Custom.MyListView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/research_post_list"
                     android:divider="@null">
-                </softwaredesign.adnursing.MyListView>
+                </softwaredesign.adnursing.Custom.MyListView>
 
             </LinearLayout>
 
