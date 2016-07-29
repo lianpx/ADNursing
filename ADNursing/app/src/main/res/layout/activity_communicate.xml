@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="softwaredesign.adnursing.CommunicateActivity">
+    tools:context=".Activity.CommunicateActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -302,7 +302,8 @@
                             android:id="@+id/select_text_newest"
                             android:button="@null"
                             android:textAlignment="center"
-                            android:checked="false" />
+                            android:checked="false"
+                            android:textColor="#414141" />
 
                         <RadioButton
                             android:layout_width="40dp"
@@ -311,7 +312,8 @@
                             android:id="@+id/select_text_hottest"
                             android:button="@null"
                             android:layout_marginLeft="20dp"
-                            android:textAlignment="center" />
+                            android:textAlignment="center"
+                            android:textColor="#414141" />
 
                     </RadioGroup>
 
@@ -325,20 +327,20 @@
                             android:layout_width="40dp"
                             android:layout_height="3dp"
                             android:id="@+id/select_bar_newest"
-                            android:background="@color/SDarkGray"/>
+                            android:background="#414141"/>
 
                         <View
                             android:layout_width="40dp"
                             android:layout_height="3dp"
                             android:id="@+id/select_bar_hottest"
-                            android:background="@color/SDarkGray"
+                            android:background="#414141"
                             android:layout_marginLeft="20dp" />
 
 
                     </LinearLayout>
                 </LinearLayout>
 
-                <softwaredesign.adnursing.MyListView
+                <softwaredesign.adnursing.Custom.MyListView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/post_list"
@@ -346,7 +348,7 @@
                     android:paddingRight="20dp"
                     android:divider="@null">
 
-                </softwaredesign.adnursing.MyListView>
+                </softwaredesign.adnursing.Custom.MyListView>
             </LinearLayout>
 
         </LinearLayout>

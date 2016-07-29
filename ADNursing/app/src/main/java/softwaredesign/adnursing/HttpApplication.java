@@ -12,6 +12,7 @@ import org.apache.http.conn.scheme.Scheme;
 import org.apache.http.conn.scheme.SchemeRegistry;
 import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.conn.PoolingClientConnectionManager;
 import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
@@ -19,9 +20,6 @@ import org.apache.http.params.HttpParams;
 import org.apache.http.params.HttpProtocolParams;
 import org.apache.http.protocol.HTTP;
 
-/**
- * Created by huacan liang on 2016/7/14.
- */
 public class HttpApplication extends Application {
 
     private static int UserId;
@@ -29,19 +27,8 @@ public class HttpApplication extends Application {
     private static Context context;
 
     private static HttpClient mHttpClient = null;
+
     private static final String CHARSET = HTTP.UTF_8;
-
-    public static Context getContext() {
-        return context;
-    }
-
-    public static int getUserId() {
-        return UserId;
-    }
-
-    public static void setUserId(int userId) {
-        UserId = userId;
-    }
 
     @Override
     public void onCreate() {
@@ -74,17 +61,18 @@ public class HttpApplication extends Application {
         HttpProtocolParams.setUseExpectContinue(params, true);
         //超时设置
 		/*从连接池中取连接的超时时间*/
-        ConnManagerParams.setTimeout(params, 1000);
+        ConnManagerParams.setTimeout(params, 2000);
 		/*连接超时*/
-        HttpConnectionParams.setConnectionTimeout(params, 2000);
+        HttpConnectionParams.setConnectionTimeout(params, 5000);
 		/*请求超时*/
-        HttpConnectionParams.setSoTimeout(params, 4000);
+        HttpConnectionParams.setSoTimeout(params, 5000);
         //设置HttpClient支持HTTp和HTTPS两种模式
         SchemeRegistry schReg = new SchemeRegistry();
         schReg.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
         schReg.register(new Scheme("https", SSLSocketFactory.getSocketFactory(), 443));
         //使用线程安全的连接管理来创建HttpClient
         ClientConnectionManager conMgr = new ThreadSafeClientConnManager(params, schReg);
+//        ClientConnectionManager conMgr = new PoolingClientConnectionManager(schReg);
         HttpClient client = new DefaultHttpClient(conMgr, params);
         return client;
     }
@@ -95,6 +83,18 @@ public class HttpApplication extends Application {
     }
     public static HttpClient getHttpClient(){
         return mHttpClient;
+    }
+
+    public static Context getContext() {
+        return context;
+    }
+
+    public static int getUserId() {
+        return UserId;
+    }
+
+    public static void setUserId(int userId) {
+        UserId = userId;
     }
 
 }

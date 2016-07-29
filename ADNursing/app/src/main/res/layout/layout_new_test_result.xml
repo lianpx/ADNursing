@@ -12,7 +12,7 @@
         <ImageView
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:id="@+id/imageView17"
+            android:id="@+id/new_test_result_sculpture"
             android:src="@mipmap/sculpture_unknown_default" />
 
         <TextView
@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:text="您此次得分为：（每项一分）"
             android:id="@+id/new_test_result_score"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:textSize="16dp" />
 
         <TextView

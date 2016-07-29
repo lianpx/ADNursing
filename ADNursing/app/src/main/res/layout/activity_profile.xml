@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="softwaredesign.adnursing.ProfileActivity">
+    tools:context=".Activity.ProfileActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -36,7 +36,8 @@
             android:text="保存"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:id="@+id/profile_save_text" />
 
     </RelativeLayout>
 
@@ -81,7 +82,7 @@
                 <ImageView
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:id="@+id/imageView2"
+                    android:id="@+id/profile_edit_sculpture"
                     android:layout_centerVertical="true"
                     android:layout_alignParentEnd="true"
                     android:src="@mipmap/sculpture_unknown_default" />
@@ -266,7 +267,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/profile_edit_diggest_text"
-                    android:hint="著名歌手"
+                    android:hint="请填写简介"
                     android:layout_centerVertical="true"
                     android:layout_toStartOf="@+id/profile_edit_digest_icon"
                     android:textSize="18dp"

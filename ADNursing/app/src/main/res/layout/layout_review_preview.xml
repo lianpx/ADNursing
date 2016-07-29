@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp" >
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="70dp"
+            android:id="@+id/review_image"
+            android:src="@mipmap/image_default"
+            android:layout_alignParentLeft="true"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/review_title"
+                android:textSize="18dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:maxLines="1"
+                android:textColor="@color/SDarkGray"
+                android:maxLength="12"
+                android:text="保持登录状态的方法" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/review_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/review_title"
+                android:layout_marginTop="5dp"
+                android:textSize="14dp"
+                android:maxLines="2"
+                android:text="本站所有主题由该帖子作者发表，该帖子作者与科帮网-享受科技、热爱生活享有帖子相关版权" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/review_time"
+                android:layout_alignParentRight="true"
+                android:layout_alignBottom="@+id/review_title"
+                android:textSize="12dp"
+                android:text="1分钟前" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>
