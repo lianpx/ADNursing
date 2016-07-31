@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/top_bar"
+        android:background="@color/White"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/top_bar_back_icon"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/btn_back_arrow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/top_bar_info_txt"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:textSize="20dp" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:id="@+id/top_bar_divd"
+        android:background="@color/DivdGray"
+        android:layout_below="@id/top_bar"/>
+
+    <softwaredesign.adnursing.Custom.RefreshLayout
+        android:id="@+id/refresh_ly"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/top_bar_divd"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginTop="10dp">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/my_post_set_list"
+            android:divider="@null">
+        </ListView>
+
+    </softwaredesign.adnursing.Custom.RefreshLayout>
+
+</RelativeLayout>

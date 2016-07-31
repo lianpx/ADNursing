@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.SettingActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/top_bar"
+        android:background="@color/White"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/top_bar_back_icon"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/btn_back_arrow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/top_bar_info_txt"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:text="设置" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:id="@+id/top_bar_divd"
+        android:background="@color/DivdGray"
+        android:layout_below="@id/top_bar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView5"
+        android:layout_below="@id/top_bar_divd"
+        android:background="@color/BgGray">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:background="@color/White"
+                android:paddingLeft="40dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:paddingRight="40dp"
+                android:id="@+id/setting_notify_bar">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="新消息通知"
+                    android:textSize="20dp"
+                    android:layout_centerVertical="true" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/setting_notify_checkbox"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:button="@drawable/checkbox_toggle"
+                    android:background="@null"
+                    android:checked="false" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/White"
+                    android:paddingLeft="40dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:paddingRight="40dp"
+                    android:id="@+id/setting_volumn_bar">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="声音"
+                        android:textSize="20dp" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:button="@drawable/checkbox_toggle"
+                        android:background="@null"
+                        android:checked="false"
+                        android:id="@+id/setting_volumn_checkbox" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/DarkGray"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/White"
+                    android:paddingLeft="40dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:id="@+id/setting_shake_bar"
+                    android:paddingRight="40dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="振动"
+                        android:textSize="20dp" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:button="@drawable/checkbox_toggle"
+                        android:background="@null"
+                        android:checked="false"
+                        android:id="@+id/setting_shake_checkbox" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:background="@color/White"
+                android:paddingLeft="40dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:paddingRight="40dp"
+                android:id="@+id/setting_logout_bar">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="退出账号"
+                    android:textSize="20dp"
+                    android:layout_centerVertical="true" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

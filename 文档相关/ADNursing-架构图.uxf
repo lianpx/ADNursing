@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.1.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>230</x>
+      <y>110</y>
+      <w>190</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>ADNursing
+valign=center
+halign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>370</x>
+      <y>210</y>
+      <w>140</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>UI
+valign=center
+halign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>370</x>
+      <y>270</y>
+      <w>140</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>UI逻辑控制层
+valign=center
+halign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>350</x>
+      <y>170</y>
+      <w>180</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>表示层</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>350</x>
+      <y>360</y>
+      <w>180</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>业务层
+valign=center
+halign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>350</x>
+      <y>430</y>
+      <w>180</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>数据访问层
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>370</x>
+      <y>460</y>
+      <w>140</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>抽象类数据访问接口
+valign=center
+halign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>370</x>
+      <y>520</y>
+      <w>140</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>database
+valign=center
+halign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.ProfileActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/top_bar"
+        android:background="@color/White"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/top_bar_back_icon"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/btn_back_arrow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/top_bar_info_txt"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:text="个人资料" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="保存"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:textSize="20dp"
+            android:id="@+id/profile_save_text" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:id="@+id/top_bar_divd"
+        android:background="@color/DivdGray"
+        android:layout_below="@id/top_bar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView4"
+        android:layout_below="@id/top_bar_divd"
+        android:background="@color/BgGray" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:background="@color/White"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="头像"
+                    android:id="@+id/textView2"
+                    android:layout_centerVertical="true"
+                    android:textSize="18dp" />
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:id="@+id/profile_edit_sculpture"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@mipmap/sculpture_unknown_default" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:background="@color/White"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="昵称"
+                    android:layout_centerVertical="true"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/profile_edit_name_text"
+                    android:text="连沛轩"
+                    android:layout_centerVertical="true"
+                    android:textSize="18dp"
+                    android:layout_marginRight="25dp"
+                    android:textAlignment="textEnd" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/DivdGray"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:background="@color/White"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="默友号"
+                    android:layout_centerVertical="true"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="xueyou233"
+                    android:layout_centerVertical="true"
+                    android:textSize="18dp"
+                    android:background="@null"
+                    android:layout_marginRight="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:text="peixuan233"
+                    android:id="@+id/profile_edit_id"
+                    android:textAlignment="textEnd" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:background="@color/White"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="性别"
+                    android:layout_centerVertical="true"
+                    android:textSize="18dp" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:id="@+id/profile_edit_gender_icon"
+                    android:src="@mipmap/post_edit_pen"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true" />
+
+                <Spinner
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/profile_edit_gender_spinner"
+                    android:layout_toStartOf="@id/profile_edit_gender_icon"
+                    android:spinnerMode="dropdown"
+                    android:textAlignment="textEnd"
+                    android:entries="@array/user_gender"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/DivdGray"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:background="@color/White"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="地区"
+                    android:layout_centerVertical="true"
+                    android:textSize="18dp" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:id="@+id/profile_edit_address_icon"
+                    android:src="@mipmap/post_edit_pen"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/profile_edit_address_text"
+                    android:hint="请选择地区"
+                    android:layout_alignParentEnd="false"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@id/profile_edit_address_icon"
+                    android:textAlignment="textEnd"
+                    android:cursorVisible="true"
+                    android:textCursorDrawable='@null'
+                    android:layout_marginRight="10dp"
+                    android:textSize="18dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:background="@color/White"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp" >
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:id="@+id/profile_edit_digest_icon"
+                    android:src="@mipmap/post_edit_pen"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="简介"
+                    android:layout_centerVertical="true"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/profile_edit_diggest_text"
+                    android:hint="请填写简介"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/profile_edit_digest_icon"
+                    android:textSize="18dp"
+                    android:background="@null"
+                    android:layout_marginRight="10dp"
+                    android:textAlignment="textEnd" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

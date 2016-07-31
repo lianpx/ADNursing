@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.1.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>190</x>
+      <y>60</y>
+      <w>100</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>用户注册
+--
+
+用户ID
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>60</y>
+      <w>110</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>用户信息
+--
+用户ID
+用户名
+用户密码
+用户头像
+性别
+地址
+简介</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>460</x>
+      <y>50</y>
+      <w>120</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+设置</panel_attributes>
+    <additional_attributes>10.0;20.0;100.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>50</y>
+      <w>100</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+管理</panel_attributes>
+    <additional_attributes>10.0;20.0;80.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>60</y>
+      <w>110</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>个人资料
+--
+通知
+收藏
+我的帖子
+我的评论
+通知设置</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>240</y>
+      <w>110</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>首页
+--
+相关推荐
+护理须知
+临床新闻
+研究前沿
+其他版块</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>190</y>
+      <w>140</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..n
+
+
+
+
+
+查看</panel_attributes>
+    <additional_attributes>10.0;20.0;10.0;70.0;120.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>240</y>
+      <w>110</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>相关新闻信息
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>460</x>
+      <y>240</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-
+&lt; 内容</panel_attributes>
+    <additional_attributes>10.0;20.0;100.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>220</x>
+      <y>200</y>
+      <w>160</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..n
+发布</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;190.0;140.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>380</y>
+      <w>110</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>交流
+--
+发帖
+评论
+搜索
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>380</y>
+      <w>110</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>发帖
+--
+标题
+分类
+正文内容
+插入图片</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>460</x>
+      <y>380</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-
+&lt; 发布新帖</panel_attributes>
+    <additional_attributes>10.0;20.0;100.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>500</y>
+      <w>110</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>测试
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>200</x>
+      <y>200</y>
+      <w>180</w>
+      <h>340</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+
+
+
+
+
+
+
+进行</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;310.0;160.0;310.0</additional_attributes>
+  </element>
+</diagram>

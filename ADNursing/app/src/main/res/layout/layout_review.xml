@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingBottom="10dp">
+
+        <softwaredesign.adnursing.Custom.RoundImageView
+            xmlns:maple="http://schemas.android.com/apk/res-auto"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/review_scul"
+            android:scaleType="centerInside"
+            android:src="@mipmap/sculpture_unknown_default"
+            maple:maskType="CIRCLE"
+            maple:borderWidth_Ri="2dp"
+            maple:borderColor_Ri="@color/DivdGray"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/review_name"
+            android:layout_toEndOf="@id/review_scul"
+            android:layout_marginLeft="8dp"
+            android:textSize="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/review_content"
+            android:layout_toEndOf="@id/review_scul"
+            android:layout_below="@id/review_name"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="5dp"
+            android:textSize="14dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/review_scul"
+            android:layout_below="@id/review_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="8dp"
+            android:id="@+id/review_image_field">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:layout_marginRight="10dp"
+                android:id="@+id/review_image_1" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:layout_marginRight="10dp"
+                android:id="@+id/review_image_2" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:layout_marginRight="10dp"
+                android:id="@+id/review_image_3" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/review_time"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/review_floor"
+            android:layout_toLeftOf="@id/review_time"
+            android:textSize="12dp"
+            android:layout_marginRight="5dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>
