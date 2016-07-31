@@ -18,6 +18,8 @@ import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import com.ad.business.UserBean;
 import com.ad.service.BussinessService;
@@ -36,24 +38,29 @@ public class UpdateTestInforServlet extends HttpServlet {
 		String mode = request.getParameter("mode");
 		//response.setContentType("text/html");
 		
-		String owner = request.getParameter("owner");
-		Integer userId = service.getUserId(owner);
+		int userId = Integer.parseInt(request.getParameter("userId"));
 		
 		String testedPerson = request.getParameter("testedPerson");
 		String testedBirth = request.getParameter("testedBirth");
 		String testedGender = request.getParameter("testedGender");
-		
-		userId = Integer.parseInt(request.getParameter("userId"));
-		
+			
 		UserBean userBean =  service.getUser(userId);
 		userBean.setTestedPerson(testedPerson);
 		userBean.setTestedBirth(testedBirth);
 		userBean.setTestedGender(testedGender);
 		
-		service.updateTestedPerson(userBean);
+		userId = service.updateTestedPerson(userBean);
 		
 		if("android".equals(mode)){
-			response.getWriter().println("更新测试者信息!");
+			JSONObject jsonObject = new JSONObject();
+			try {
+				jsonObject.put("userId", userId);
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			response.getWriter().println(jsonObject.toString());
 		}else if("web".equals(mode)){			
 //				response.getWriter().write("更新成功。2秒后自动转向添加页面");
 //				response.setHeader("Refresh", "2;URL=" + request.getContextPath()

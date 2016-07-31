@@ -30,8 +30,7 @@ public class IsFavoriteServlet extends HttpServlet {
 		// 获取业务逻辑对象
 		BussinessService service = new BussinessServiceImpl();
 		
-		String owner = request.getParameter("owner");
-		Integer userId = service.getUserId(owner);		
+		int userId = Integer.parseInt(request.getParameter("userId"));		
 		Integer postId = Integer.parseInt(request.getParameter("postId"));
 		
 		Integer result = service.isFavorite(userId, postId);

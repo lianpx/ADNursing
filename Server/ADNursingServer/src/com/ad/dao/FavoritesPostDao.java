@@ -22,7 +22,7 @@ public interface FavoritesPostDao {
 	 * @param favoritesPost，有对应的userId和postId
 	 * @return 
 	 */
-	void save(FavoritesPost favoritesPost);
+	int save(FavoritesPost favoritesPost);
 	
 	/**
 	 * 删除收藏帖子
@@ -30,6 +30,8 @@ public interface FavoritesPostDao {
 	 * @return 
 	 */
 	void del(Integer userId, Integer postId);
+	
+	int delByUserIdAndPostId(Integer userId, Integer postId);
 	
 	/**
 	 * 是否已被收藏

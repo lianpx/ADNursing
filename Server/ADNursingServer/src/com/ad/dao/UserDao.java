@@ -44,7 +44,7 @@ public interface UserDao {
 	 * @param user 一个用户的信息
 	 * @return 
 	 */
-	void updateTestedPerson(UserBean user);
+	int updateTestedPerson(UserBean user);
 	
 	int updateUserInfor(int userId, String gender, String address, String description);
 	

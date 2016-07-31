@@ -39,10 +39,14 @@ public class FavoritesPostDaoImpl implements FavoritesPostDao{
 	 * @return 
 	 */
 	@Override
-	public void save(FavoritesPost favoritesPost) {
+	public int save(FavoritesPost favoritesPost) {
 		try {
 			String sql = "insert into favorites_post (user_id,post_id) values(?,?)";
-			qr.update(sql, favoritesPost.getUser_id(),favoritesPost.getPost_id());
+			int res = qr.update(sql, favoritesPost.getUser_id(),favoritesPost.getPost_id());
+			if(res > 0) {
+				return favoritesPost.getUser_id();
+			}
+			return res;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
@@ -57,8 +61,8 @@ public class FavoritesPostDaoImpl implements FavoritesPostDao{
 	@Override
 	public void del(Integer userId, Integer postId) {
 		try {
-			String sql = "delete from favorites_post where post_id=? and user_id=?";
-			qr.update(sql, postId, userId);
+			String sql = "delete from favorites_post where post_id=?";
+			qr.update(sql, postId);
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}	
@@ -79,6 +83,20 @@ public class FavoritesPostDaoImpl implements FavoritesPostDao{
 				return 1;
 			}
 			return 0;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	@Override
+	public int delByUserIdAndPostId(Integer userId, Integer postId) {
+		try {
+			String sql = "delete from favorites_post where post_id=? and user_id=?";
+			int res = qr.update(sql, postId, userId);
+			if(res > 0) {
+				return userId;
+			}
+			return res;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}

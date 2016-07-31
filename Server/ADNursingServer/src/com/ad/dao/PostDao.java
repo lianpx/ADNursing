@@ -55,7 +55,7 @@ public interface PostDao {
 	 * @param userId 用户Id，postId 帖子Id
 	 * @return 
 	 */
-	void del(Integer userId, Integer postId);
+	int del(Integer userId, Integer postId);
 	
 	/**
 	 * 查找某个帖子
@@ -64,7 +64,7 @@ public interface PostDao {
 	 */
 	Post get(int postId);
 	
-	void updatePostImgUrl(Integer post_id, String imgUrl);
+	int updatePostImgUrl(Integer post_id, String imgUrl);
 	
 	
 }

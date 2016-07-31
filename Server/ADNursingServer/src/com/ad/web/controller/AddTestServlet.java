@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import com.ad.bean.FavoritesPost;
 import com.ad.bean.Test;
 import com.ad.service.BussinessService;
@@ -27,26 +30,27 @@ public class AddTestServlet extends HttpServlet {
 		String mode = request.getParameter("mode");
 		String op = request.getParameter("op");
 		// 获取userId
-		String owner = request.getParameter("owner");
-		Integer userId = service.getUserId(owner);
+		int userId = Integer.parseInt(request.getParameter("userId"));
 
 		
 		Integer resultId = -1;			
 		
 		
-		userId = Integer.parseInt(request.getParameter("userId"));
 		int testPoint = Integer.parseInt(request.getParameter("testPoint"));
 		
 		Test test = new Test("1", testPoint); 
-		resultId = service.addTestResult(test, userId);
+		int testId = service.addTestResult(test, userId);
 		
 		if("android".equals(mode)){
-			// 添加成功
-			if (resultId > 0) {
-				response.getWriter().println("恭喜您，测试成功!");
-			} else {
-				response.getWriter().println("对不起，测试失败!");
+			JSONObject jsonObject = new JSONObject();
+			try {
+				jsonObject.put("testId", testId);
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
+
+			response.getWriter().println(jsonObject.toString());
 		}else if("web".equals(mode)){
 //			response.getWriter().write("收藏成功。2秒后自动转向收藏页面");
 //			response.setHeader("Refresh", "2;URL=" + request.getContextPath()
