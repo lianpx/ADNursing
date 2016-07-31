@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.ad.business.CommentBean;
@@ -27,16 +28,23 @@ public class DelCommentServlet extends HttpServlet {
 		// 获取业务逻辑对象
 		BussinessService service = new BussinessServiceImpl();
 		
-		String owner = request.getParameter("owner");
-		Integer userId = service.getUserId(owner);	
+		int userId = Integer.parseInt(request.getParameter("userId"));
 		Integer commentId = Integer.parseInt(request.getParameter("commentId"));
 		CommentBean comment = service.getComment(commentId);
 		
-		service.delCommentByUserIdAndCommentId(userId, commentId);
+		int res = service.delCommentByUserIdAndCommentId(userId, commentId);
 		service.descrPostThx(comment.getPost_id());
 		
 		if ("android".equals(mode)) {
-			response.getWriter().println("删除评论");
+			JSONObject jsonObject = new JSONObject();
+			try {
+				jsonObject.put("commentId", res);
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			response.getWriter().println(jsonObject.toString());
 		} else if ("web".equals(mode)) {	
 			request.getRequestDispatcher("/manage/viewOwnerComment.jsp").forward(
 					request, response);

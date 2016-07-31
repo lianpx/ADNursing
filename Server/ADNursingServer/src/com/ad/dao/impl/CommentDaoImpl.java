@@ -104,12 +104,15 @@ public class CommentDaoImpl implements CommentDao{
 			String sql = "insert into comment(comment_text,comment_date,post_id,owner_id,img_url) "
 					+ //
 					"values(?,?,?,?,?)";
-			qr.update(sql, comment.getComment_text(), comment.getComment_date(), 
+			int res = qr.update(sql, comment.getComment_text(), comment.getComment_date(), 
 					comment.getPost_id(), comment.getOwner_id(),comment.getImg_url());
 			String sql2 = "select @@identity as comment_id";
 			Object comment_id = qr.query(sql2, new ScalarHandler(1));
 			comment.setComment_id(Integer.valueOf(comment_id.toString()));
-			return Integer.valueOf(comment_id.toString());
+			if(res > 0) {
+				return Integer.valueOf(comment_id.toString());
+			}
+			return res;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
@@ -122,10 +125,14 @@ public class CommentDaoImpl implements CommentDao{
 	 * @return 
 	 */
 	@Override
-	public void del(Integer userId, Integer commentId) {
+	public int del(Integer userId, Integer commentId) {
 		try {
-			String sql = "delete from comment where comment_id=? and owner_id=?";
-			qr.update(sql, commentId, userId);
+			String sql = "delete from comment where comment_id=?";
+			int res = qr.update(sql, commentId);
+			if(res > 0) {
+				return commentId;
+			}
+			return res;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
@@ -160,10 +167,14 @@ public class CommentDaoImpl implements CommentDao{
 		}
 	}
 	
-	public void updateCommentImgUrl(Integer comment_id, String imgUrl) {
+	public int updateCommentImgUrl(Integer comment_id, String imgUrl) {
 		try {
 			String sql = "update comment set img_url=? where comment_id=?";
-			qr.update(sql, imgUrl, comment_id);
+			int res = qr.update(sql, imgUrl, comment_id);
+			if(res > 0) {
+				return comment_id;
+			}
+			return res;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}

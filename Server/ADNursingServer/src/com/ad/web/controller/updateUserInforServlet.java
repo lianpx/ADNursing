@@ -3,6 +3,7 @@ package com.ad.web.controller;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,6 +15,7 @@ import com.ad.bean.Comment;
 import com.ad.service.BussinessService;
 import com.ad.service.impl.BussinessServiceImpl;
 
+@WebServlet(urlPatterns = "/android/updateUserInfor.jsp")
 public class updateUserInforServlet extends HttpServlet {
 	// 获取业务逻辑对象
 			BussinessService service = new BussinessServiceImpl();

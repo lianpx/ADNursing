@@ -17,6 +17,8 @@ import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import com.ad.service.BussinessService;
 import com.ad.service.impl.BussinessServiceImpl;
@@ -30,11 +32,19 @@ public class AddCommentImgUrlServlet extends HttpServlet {
 		String mode = request.getParameter("mode");
 
 		
-		addCommentImage(request);
+		int commentId = addCommentImage(request);
 		if("android".equals(mode)){
 
 
-			response.getWriter().println("更新图片");
+			JSONObject jsonObject = new JSONObject();
+			try {
+				jsonObject.put("commentId", commentId);
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			response.getWriter().println(jsonObject.toString());
 
 			
 
@@ -47,14 +57,14 @@ public class AddCommentImgUrlServlet extends HttpServlet {
 		}
 	}
 	
-	private void addCommentImage(HttpServletRequest request) {		
+	private int addCommentImage(HttpServletRequest request) {		
 		// 设置request编码，主要是为了处理普通输入框中的中文问题
 		//request.setCharacterEncoding("gbk");
 		DiskFileItemFactory factory = new DiskFileItemFactory();
 		// 设置文件的缓存路径
-		factory.setRepository(new File("E:/ADNursing/temp/"));
+		factory.setRepository(new File("D:/ftp/apache-tomcat-8.0.35/webapps/ADNursingServer/res/temp/"));
 		//上传文件的保存路径
-		String path = "E:\\ADNursing\\image\\";
+		String path = "D:\\ftp\\apache-tomcat-8.0.35\\webapps\\ADNursingServer\\res\\image\\";
 		File dir = new File(path);
 		if (!dir.exists()) {
 			dir.mkdirs();
@@ -74,10 +84,10 @@ public class AddCommentImgUrlServlet extends HttpServlet {
 		
 		// 解析请求参数
 		// 获取userId
-		Integer userId = (Integer) request.getSession(true).getAttribute(
-				"userId");
+
 
 		String imgUrl = "";
+		String resImgUrl = "";
 		
 		System.out.println(items.size());
 		// 下面对每个字段进行处理，分普通字段和文件字段
@@ -93,14 +103,18 @@ public class AddCommentImgUrlServlet extends HttpServlet {
 
 				String filename = fileItem.getName();
 				String url = "";
+				String onepic = "";
 				if(filename != "") {
-					url = path + makeFileName(filename);
+					onepic = makeFileName(filename);
+					url = path + onepic;
 					if (imgUrl != "") {
 						imgUrl += "|";
+						resImgUrl += "|";
 					}
 				}
 
 				imgUrl += url;
+				resImgUrl += onepic;
 					
 				
 				// 保存文件，其实就是把缓存里的数据写到目标路径下
@@ -119,7 +133,7 @@ public class AddCommentImgUrlServlet extends HttpServlet {
 
 		
 		int commentId = Integer.parseInt(request.getParameter("commentId"));
-		service.updateCommentImgUrl(commentId, imgUrl);
+		return service.updateCommentImgUrl(commentId, resImgUrl);
 	}
 	
 	 /**

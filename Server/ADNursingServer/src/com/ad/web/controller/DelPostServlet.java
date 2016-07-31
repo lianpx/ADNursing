@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import com.ad.business.CommentBean;
 import com.ad.business.PostBean;
 import com.ad.service.BussinessService;
@@ -27,8 +30,7 @@ public class DelPostServlet extends HttpServlet {
 		// 获取业务逻辑对象
 		BussinessService service = new BussinessServiceImpl();
 		
-		String owner = request.getParameter("owner");
-		Integer userId = service.getUserId(owner);		
+		int userId = Integer.parseInt(request.getParameter("userId"));	
 		Integer postId = Integer.parseInt(request.getParameter("postId"));
 		
 		PostBean post = service.getPost(postId);
@@ -40,10 +42,18 @@ public class DelPostServlet extends HttpServlet {
 		}
 		service.delFavorite(userId, postId);
 		
-		service.delPostByUserIdAndPostId(userId, postId);
+		int res = service.delPostByUserIdAndPostId(userId, postId);
 		
 		if ("android".equals(mode)) {
-			response.getWriter().println("删除帖子");
+			JSONObject jsonObject = new JSONObject();
+			try {
+				jsonObject.put("postId", res);
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			response.getWriter().println(jsonObject.toString());
 		} else if ("web".equals(mode)) {	
 			request.getRequestDispatcher("/manage/viewOwnerPost.jsp").forward(
 					request, response);

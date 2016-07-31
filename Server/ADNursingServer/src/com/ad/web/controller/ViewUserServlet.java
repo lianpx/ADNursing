@@ -28,13 +28,11 @@ public class ViewUserServlet extends HttpServlet {
 			throws ServletException, IOException {
 		//获取请求参数，这个参数标记的是返回的json数据，用于提供给客户端
 		String mode = request.getParameter("mode");
-		String op = request.getParameter("op");
 		Integer userId = -1;
 		
 		// 获取业务逻辑对象
 		BussinessService service = new BussinessServiceImpl();
 		
-		String owner = request.getParameter("owner");
 		userId = Integer.parseInt(request.getParameter("userId"));
 
 		/* 获取用户的信息 */

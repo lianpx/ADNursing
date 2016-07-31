@@ -46,7 +46,6 @@ public class AddPostServlet extends HttpServlet {
 		String postKind = request.getParameter("postKind");
 		
 		
-		String owner = request.getParameter("owner");
 		Post post = new Post(postTitle, postText, postKind, "");
 
 		Integer userId = Integer.parseInt(request.getParameter("userId"));

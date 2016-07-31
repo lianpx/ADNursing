@@ -10,9 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import com.ad.business.CommentBean;
 import com.ad.business.PostBean;
+import com.ad.business.UserBean;
 import com.ad.service.BussinessService;
 import com.ad.service.impl.BussinessServiceImpl;
 
@@ -25,21 +28,46 @@ public class ViewOwnerCommentServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String mode = request.getParameter("mode");
-		String op = request.getParameter("op");
-		Integer userId = -1;
+
 		// 获取业务逻辑对象
 		BussinessService service = new BussinessServiceImpl();
 				
 
-		String owner = request.getParameter("owner");
-		userId = service.getUserId(owner);
+		int userId = Integer.parseInt(request.getParameter("userId"));
 		
-		//System.out.println((int)userId);	
 		List<CommentBean> comments = service.getCommentsByOwner(userId);
+		
+		JSONArray jsonArray = new JSONArray(comments);
+		
+		for(int i = 0; i < jsonArray.length(); i++) {
+			JSONObject jsonObject = new JSONObject();
+			try {
+				jsonObject = jsonArray.getJSONObject(i);
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			int postId = 0;
+			try {
+				postId = Integer.parseInt(jsonObject.getString("post_id"));
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			PostBean postBean = service.getPost(postId);
+			String postImgUrl = postBean.getImg_url();
+			String postTitle = postBean.getPost_title();
+			try {
+				jsonArray.getJSONObject(i).put("postImgUrl", postImgUrl);
+				jsonArray.getJSONObject(i).put("postTitle", postTitle);
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		
 		
 		if ("android".equals(mode)) {
-			JSONArray jsonArray = new JSONArray(comments);
 			response.getWriter().println(jsonArray.toString());
 		} else if ("web".equals(mode)) {
 			request.setAttribute("comments", comments);

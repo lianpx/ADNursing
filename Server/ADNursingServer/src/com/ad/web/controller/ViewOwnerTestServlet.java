@@ -27,17 +27,10 @@ public class ViewOwnerTestServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String mode = request.getParameter("mode");
 		//String op = request.getParameter("op");
-		Integer userId = -1;
-		// 获取业务逻辑对象
+
 		BussinessService service = new BussinessServiceImpl();
 				
-
-		String owner = request.getParameter("owner");
-
-		
-		userId = service.getUserId(owner);
-		
-		userId = Integer.parseInt(request.getParameter("userId"));
+		Integer userId = Integer.parseInt(request.getParameter("userId"));
 		
 //		System.out.println("userId"+userId);
 		

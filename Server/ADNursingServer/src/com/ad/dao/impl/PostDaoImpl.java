@@ -101,13 +101,16 @@ public class PostDaoImpl implements PostDao{
 			String sql = "insert into post(post_title,post_text,post_kind,post_date,comment_num,owner_id,img_url) "
 					+ //
 					"values(?,?,?,?,?,?,?)";
-			qr.update(sql, post.getPost_title(), post.getPost_text(), post.getPost_kind(),
+			int res = qr.update(sql, post.getPost_title(), post.getPost_text(), post.getPost_kind(),
 					post.getPost_date(), post.getComment_num(),
 					post.getOwner_id(),post.getImg_url());
 			String sql2 = "select @@identity as post_id";
 			Object post_id = qr.query(sql2, new ScalarHandler(1));
 			post.setPost_id(Integer.valueOf(post_id.toString()));
-			return Integer.valueOf(post_id.toString());
+			if(res>0) {
+				return Integer.valueOf(post_id.toString());
+			}
+			return res;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
@@ -119,10 +122,14 @@ public class PostDaoImpl implements PostDao{
 	 * @return 
 	 */
 	@Override
-	public void del(Integer userId, Integer postId) {
+	public int del(Integer userId, Integer postId) {
 		try {
-			String sql = "delete from post where post_id=? and owner_id=?";
-			qr.update(sql, postId, userId);
+			String sql = "delete from post where post_id=?";
+			int res = qr.update(sql, postId);
+			if(res > 0) {
+				return postId;
+			}
+			return res;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}	
@@ -177,10 +184,14 @@ public class PostDaoImpl implements PostDao{
 		}
 	}
 	
-	public void updatePostImgUrl(Integer post_id, String imgUrl) {
+	public int updatePostImgUrl(Integer post_id, String imgUrl) {
 		try {
 			String sql = "update post set  img_url=? where post_id=?";
-			qr.update(sql, imgUrl, post_id);
+			int res = qr.update(sql, imgUrl, post_id);
+			if(res > 0) {
+				return post_id;
+			}
+			return res;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}

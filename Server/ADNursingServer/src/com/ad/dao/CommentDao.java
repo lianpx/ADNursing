@@ -43,7 +43,7 @@ public interface CommentDao {
 	 * @param userId 用户id  commentId 评论id
 	 * @return 
 	 */
-	void del(Integer userId, Integer commentId);
+	int del(Integer userId, Integer commentId);
 	
 	/**
 	 * 查找某条评论
@@ -52,5 +52,5 @@ public interface CommentDao {
 	 */
 	Comment get(int commnentId);
 	
-	void updateCommentImgUrl(Integer comment_id, String imgUrl);
+	int updateCommentImgUrl(Integer comment_id, String imgUrl);
 }

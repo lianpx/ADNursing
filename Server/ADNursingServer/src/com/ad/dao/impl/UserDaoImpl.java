@@ -119,11 +119,15 @@ public class UserDaoImpl implements UserDao{
 	 * @return 
 	 */
 	@Override
-	public void updateTestedPerson(UserBean user) {
+	public int updateTestedPerson(UserBean user) {
 		try {
 			String sql = "update user set tested_person=?,tested_birth=?,tested_gender=? where user_id=?";
-			qr.update(sql,user.getTestedPerson(),user.getTestedBirth(),
+			int res = qr.update(sql,user.getTestedPerson(),user.getTestedBirth(),
 					user.getTestedGender(),user.getUser_id());
+			if(res > 0) {
+				return user.getUser_id();
+			}
+			return res;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
@@ -133,8 +137,11 @@ public class UserDaoImpl implements UserDao{
 	public int updateUserInfor(int userId, String gender, String address, String description) {
 		try {
 			String sql = "update user set gender=?,address=?,description=? where user_id=?";
-			qr.update(sql,gender,address,description,userId);
-			return userId;
+			int res = qr.update(sql,gender,address,description,userId);
+			if(res > 0) {
+				return userId;
+			}
+			return res;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
@@ -144,8 +151,11 @@ public class UserDaoImpl implements UserDao{
 	public int updateUserImgUrl(int userId, String url) {
 		try {
 		String sql = "update user set img_url=? where user_id=?";
-		qr.update(sql,url,userId);
-		return userId;
+		int res = qr.update(sql,url,userId);
+		if(res > 0){
+			return userId;
+		}
+		return res;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}

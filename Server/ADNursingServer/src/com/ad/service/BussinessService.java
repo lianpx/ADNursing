@@ -60,7 +60,7 @@ public interface BussinessService {
 	 * @param user 一个用户的信息
 	 * @return 
 	 */
-	void updateTestedPerson(UserBean user) throws ADException;
+	int updateTestedPerson(UserBean user) throws ADException;
 	
 	
 	int updateUserInfor(int userId, String gender, String address, String description);
@@ -114,7 +114,7 @@ public interface BussinessService {
 	 * @param userId 拥有者ID
 	 * @param postId 帖子ID
 	 */
-	void delPostByUserIdAndPostId(Integer userId, Integer postId)
+	int delPostByUserIdAndPostId(Integer userId, Integer postId)
 		throws ADException;
 	
 	/**
@@ -132,7 +132,7 @@ public interface BussinessService {
 	 */
 	void descrPostThx(int postId);
 	
-	void updatePostImgUrl(int postId, String imgUrl);
+	int updatePostImgUrl(int postId, String imgUrl);
 	
 	
 	/**********评论相关接口***********/
@@ -183,10 +183,10 @@ public interface BussinessService {
 	 * @param userId 用户id  commentId 评论id
 	 * @return 
 	 */
-	void delCommentByUserIdAndCommentId(Integer userId, Integer commentId)
+	int delCommentByUserIdAndCommentId(Integer userId, Integer commentId)
 		throws ADException;
 	
-	void updateCommentImgUrl(int commentId, String imgUrl);
+	int updateCommentImgUrl(int commentId, String imgUrl);
 	
 	
 	/**********收藏相关接口***********/
@@ -213,7 +213,7 @@ public interface BussinessService {
 	 */
 	void delFavorite(Integer useId, Integer postId);
 	
-	
+	int delFavoriteByUserIdAndPostId(Integer userId, Integer postId);
 	/**
 	 * 是否已被收藏
 	 * @param userId 用户Id，postId 帖子Id

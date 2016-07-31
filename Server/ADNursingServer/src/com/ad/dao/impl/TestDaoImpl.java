@@ -53,16 +53,21 @@ public class TestDaoImpl implements TestDao{
 	 * @return 
 	 */
 	@Override
-	public void save(Test test) {
+	public int save(Test test) {
 		try {
 			String sql = "insert into test(owner_id,test_type,test_point,test_date) "
 					+ //
 					"values(?,?,?,?)";
-			qr.update(sql, test.getOwner_id(), test.getTest_type(),
+			int res = qr.update(sql, test.getOwner_id(), test.getTest_type(),
 					test.getTest_point(), test.getTest_date());
 			String sql2 = "select @@identity as test_id";
 			Object test_id = qr.query(sql2, new ScalarHandler(1));
-			test.setTest_point(Integer.valueOf(test_id.toString()));
+			
+			test.setTest_id(Integer.valueOf(test_id.toString()));
+			if(res > 0) {
+				return Integer.valueOf(test_id.toString());
+			}
+			return res;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}

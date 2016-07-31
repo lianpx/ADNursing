@@ -18,7 +18,7 @@ public interface TestDao {
 	 * @param test 一条测试结果
 	 * @return 
 	 */
-	void save(Test test);
+	int save(Test test);
 	
 	/**
 	 * 查找某条测试结果

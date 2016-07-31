@@ -25,7 +25,7 @@ public class ViewOnePostServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String mode = request.getParameter("mode");
-		//String op = request.getParameter("op");
+
 		// 获取业务逻辑对象
 		BussinessService service = new BussinessServiceImpl();
 				

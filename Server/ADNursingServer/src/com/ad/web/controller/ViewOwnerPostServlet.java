@@ -10,9 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import com.mysql.jdbc.log.Log;
 import com.ad.business.PostBean;
+import com.ad.business.UserBean;
 import com.ad.service.BussinessService;
 import com.ad.service.impl.BussinessServiceImpl;
 
@@ -25,20 +28,45 @@ public class ViewOwnerPostServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String mode = request.getParameter("mode");
-		//String op = request.getParameter("op");
-		Integer userId = -1;
+
 		// 获取业务逻辑对象
 		BussinessService service = new BussinessServiceImpl();
 				
 
-		String owner = request.getParameter("owner");
-		userId = service.getUserId(owner);
-		//System.out.println((int)userId);	
+		int userId = Integer.parseInt(request.getParameter("userId"));
+
 		List<PostBean> posts = service.getPostsByOwner(userId);
 		
+		JSONArray jsonArray = new JSONArray(posts);
+		
+		for(int i = 0; i < jsonArray.length(); i++) {
+			JSONObject jsonObject = new JSONObject();
+			try {
+				jsonObject = jsonArray.getJSONObject(i);
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			String owner="";
+			try {
+				owner = jsonObject.getString("owner");
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			int userid = service.getUserId(owner);
+			UserBean userBean = service.getUser(userid);
+			String userImgUrl = userBean.getImg_url();
+			try {
+				jsonArray.getJSONObject(i).put("userImgUrl", userImgUrl);
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		
 		if ("android".equals(mode)) {
-			JSONArray jsonArray = new JSONArray(posts);
+			
 			response.getWriter().println(jsonArray.toString());
 		} else if ("web".equals(mode)) {
 			request.setAttribute("posts", posts);

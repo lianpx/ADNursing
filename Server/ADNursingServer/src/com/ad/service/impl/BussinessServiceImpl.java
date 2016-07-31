@@ -6,32 +6,6 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import com.ad.bean.Comment;
 import com.ad.bean.FavoritesPost;
 import com.ad.bean.Post;
@@ -121,9 +95,10 @@ public class BussinessServiceImpl implements BussinessService{
 	}
 	
 	@Override
-	public void updateTestedPerson(UserBean user) throws ADException {
+	public int updateTestedPerson(UserBean user) throws ADException {
 		try {
-			userDao.updateTestedPerson(user);
+			int res = userDao.updateTestedPerson(user);
+			return res;
 		} catch (Exception e) {
 			throw new ADException("更新用户信息出现异常,请重试");
 		}
@@ -134,8 +109,8 @@ public class BussinessServiceImpl implements BussinessService{
 	public int updateUserInfor(int userId, String gender, String address,
 			String description) {
 		try {
-			userDao.updateUserInfor(userId, gender, address, description);
-			return userId;
+			int res = userDao.updateUserInfor(userId, gender, address, description);
+			return res;
 		} catch (Exception e) {
 			throw new ADException("更新用户信息出现异常,请重试");
 		}
@@ -144,8 +119,8 @@ public class BussinessServiceImpl implements BussinessService{
 	@Override
 	public int updateUserImgUrl(int userId, String url) {
 		try {
-			userDao.updateUserImgUrl(userId, url);
-			return userId;
+			int res = userDao.updateUserImgUrl(userId, url);
+			return res;
 			
 		} catch (Exception e) {
 			throw new ADException("更新用户信息出现异常,请重试");
@@ -245,9 +220,10 @@ public class BussinessServiceImpl implements BussinessService{
 
 
 	@Override
-	public void delPostByUserIdAndPostId(Integer userId, Integer postId)
+	public int delPostByUserIdAndPostId(Integer userId, Integer postId)
 			throws ADException {
-		postDao.del(userId, postId);
+		int res = postDao.del(userId, postId);
+		return res;
 		
 	}
 
@@ -272,9 +248,10 @@ public class BussinessServiceImpl implements BussinessService{
 	}
 	
 	@Override
-	public void updatePostImgUrl(int postId, String imgUrl) {
+	public int updatePostImgUrl(int postId, String imgUrl) {
 		try {
-			postDao.updatePostImgUrl(postId, imgUrl);
+			int res = postDao.updatePostImgUrl(postId, imgUrl);
+			return res;
 		} catch (Exception e) {
 			throw new ADException("出现异常,请重试");
 		}
@@ -371,23 +348,24 @@ public class BussinessServiceImpl implements BussinessService{
 		comment.setOwner_id(userId);
 		comment.setPost_id(postID);
 
-	    commentDao.save(comment);
+	    int res = commentDao.save(comment);
 
-		return comment.getComment_id();
+		return res;
 	}
 
 
 	@Override
-	public void delCommentByUserIdAndCommentId(Integer userId, Integer commentId)
+	public int delCommentByUserIdAndCommentId(Integer userId, Integer commentId)
 			throws ADException {
-		commentDao.del(userId, commentId);
-		
+		int res = commentDao.del(userId, commentId);
+		return res;
 	}
 	
 	@Override
-	public void updateCommentImgUrl(int commentId, String imgUrl) {
+	public int updateCommentImgUrl(int commentId, String imgUrl) {
 		try {
-			commentDao.updateCommentImgUrl(commentId, imgUrl);
+			int res = commentDao.updateCommentImgUrl(commentId, imgUrl);
+			return res;
 		} catch (Exception e) {
 			throw new ADException("出现异常,请重试");
 		}
@@ -429,8 +407,8 @@ public class BussinessServiceImpl implements BussinessService{
 	@Override
 	public int addFavoritesPost(FavoritesPost favoritesPost)
 			throws ADException {
-		favoritesPostDao.save(favoritesPost);
-		return favoritesPost.getPost_id();
+		return favoritesPostDao.save(favoritesPost);
+		
 	}
 
 
@@ -438,6 +416,11 @@ public class BussinessServiceImpl implements BussinessService{
 	public void delFavorite(Integer userId, Integer postId) {
 		favoritesPostDao.del(userId, postId);
 		
+	}
+	
+	@Override
+	public int delFavoriteByUserIdAndPostId(Integer userId, Integer postId){
+		return favoritesPostDao.delByUserIdAndPostId(userId, postId);
 	}
 	
 	@Override
@@ -453,9 +436,9 @@ public class BussinessServiceImpl implements BussinessService{
 		test.setOwner_id(useId);
 		test.setTest_date(new Date());
 	
-		testDao.save(test);
+		int res = testDao.save(test);
 
-		return 1;
+		return res;
 	}
 
 

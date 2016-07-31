@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import com.ad.business.CommentBean;
 import com.ad.service.BussinessService;
 import com.ad.service.impl.BussinessServiceImpl;
@@ -25,15 +28,22 @@ public class DelFavoriteServlet extends HttpServlet {
 		// 获取业务逻辑对象
 		BussinessService service = new BussinessServiceImpl();
 		
-		String owner = request.getParameter("owner");
-		Integer userId = service.getUserId(owner);		
+		int userId = Integer.parseInt(request.getParameter("userId"));		
 		Integer postId = Integer.parseInt(request.getParameter("postId"));
 		
-		service.delFavorite(userId, postId);
+		int res = service.delFavoriteByUserIdAndPostId(userId, postId);
 		
 		
 		if ("android".equals(mode)) {
-			response.getWriter().println("删除收藏");
+			JSONObject jsonObject = new JSONObject();
+			try {
+				jsonObject.put("userId", res);
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			response.getWriter().println(jsonObject.toString());
 		} else if ("web".equals(mode)) {	
 			request.getRequestDispatcher("/manage/viewOwnerFavorites.jsp").forward(
 					request, response);
